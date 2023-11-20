@@ -15,6 +15,24 @@
 - 编程语言：
 - 三部分最好分开写成三个可以调用的函数，最后用主函数测试直接调用，这样第一部分就可以直接调用第二、三部分的函数
 
+## 目录
+
+```
+
+├─ chap0x01
+  ├── README.md
+  ├── refer
+  │   ├── csdn参考资料.txt
+  │   ├── dalechu个人自制参考资料.md
+  │   └── github代码参考.cpp
+  ├── code
+  │   ├── part1.py
+  │   └── part2.cpp
+  └── img
+      ├── title.png
+      └── screenshot-1.png
+
+```
 
 ## 任务分工
 
