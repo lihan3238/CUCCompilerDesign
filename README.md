@@ -49,11 +49,11 @@
 ## 实验内容
 
 - [chap0x00](./chap0x00/README.md)  :   全局参考资料
-- [chap0x02](./chap0x01/README.md)  :   词法分析器
-- [chap0x03](./chap0x02/README.md)  :   自顶向下语法分析程序
-- [chap0x04](./chap0x03/README.md)  :   自底向上语法分析程序
-- [chap0x05](./chap0x04/README.md)  :   前端编译器开发程序
-- [chap0x06](./chap0x05/README.md)  :   编译器的分析和开发
+- [chap0x02](./chap0x02/README.md)  :   词法分析器
+- [chap0x03](./chap0x03/README.md)  :   自顶向下语法分析程序
+- [chap0x04](./chap0x04/README.md)  :   自底向上语法分析程序
+- [chap0x05](./chap0x05/README.md)  :   前端编译器开发程序
+- [chap0x06](./chap0x06/README.md)  :   编译器的分析和开发
 
 
 
