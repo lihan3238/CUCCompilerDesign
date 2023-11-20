@@ -9,13 +9,13 @@
 
 |github用户名|gitee用户名|姓名|
 |:---:|:---:|:---:|
-|   ||lxz|
+|sovietpuppy||lxz|
 |lihan3238|lihan2049|ldy|
 |dalechu|dalechu|cwt|
-|LYshencuc||lys|
+|dracuspicy||lys|
 |zhihaha||zyx|
 |zhanghuanjia767||zhj|
-|   ||stc|
+|Szi||stc|
 
 
 ## 目录结构
