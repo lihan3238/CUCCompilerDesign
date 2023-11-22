@@ -253,11 +253,9 @@ def changeLeft() -> None:
     r1 = ""
     r2 = ""
     for i in range(len(Gram)):
-        # if Gram[i][0] == Gram[i][3]:  # 左递归
-        #     comm = Gram[i][0]
-        #     r1 = Gram[i][4:]
-        #     r2 = Gram[i][0] + "'" + Gram[i][4:]
-        #     Gram[i] = comm + "->" + r1 + comm + "'"  # 将原来的产生式改为新的产生式
+        if Gram[i][0] == Gram[i][3]:  # 左递归
+            # func1() # 消除左递归
+            break
 
         for j in range(i + 1, len(Gram)):  # 跳过同一条产生式和已经比较过的产生式
             if Gram[i][3] == Gram[j][3]:  # 左公因子
@@ -283,6 +281,7 @@ def changeLeft() -> None:
 
                 non_term.add(newChar)
                 Gram[j] = newChar + "->" + r1 + "|" + r2
+                break
     if hasLeft():
         changeLeft()  # 递归消除所有左公因子和左递归
 
