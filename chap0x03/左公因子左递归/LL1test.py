@@ -252,9 +252,52 @@ def changeLeft() -> None:
     comm = ""
     r1 = ""
     r2 = ""
+    l1 = ""
+    l2 = ""
     for i in range(len(Gram)):
         if Gram[i][0] == Gram[i][3]:  # 左递归
-            # func1() # 消除左递归
+            # 消除左递归
+            k = 0
+            while k < (len(Gram)):
+                if i == k:
+                    continue  # 跳过自己
+                if Gram[k][0] == Gram[i][0]:
+                    r1 = Gram[k][3:]
+                    Gram[i] = Gram[i] + "|" + r1  # 将原来的产生式改为新的产生式
+                    Gram.remove(Gram[k])  # 删除原来的产生式
+                    k -= 1
+                k += 1
+            # 消除左递归
+            for l in range(len(Gram[i])):
+                if Gram[i][l] == "|":
+                    r2 = Gram[i][1:l]
+                    if r2 == "":
+                        r2 = "ɛ"
+                    while newChar in non_term:
+                        newChar = chr(ord(newChar) + 1)  # 防止新的非终结符已经存在
+                    l2 = newChar + "->" + r2 + newChar
+                    break
+            for s in range(len(Gram[i])):
+                if Gram[i][s] == "|":
+                    if Gram[i][s + 1] == Gram[i][0]:  # 直接左递归的产生式
+                        r2 = Gram[i][l + 2 : s]
+                        if r2 == "":
+                            r2 = "ɛ"
+                        while newChar in non_term:
+                            newChar = chr(ord(newChar) + 1)  # 防止新的非终结符已经存在
+                        l2 = "|" + r2 + newChar
+                    else:
+                        r2 = Gram[i][l + 1 : s]
+                        if r2 == "":
+                            r2 = "ɛ"
+                        if l1 == "":
+                            l1 = Gram[i][0] + "->" + r2 + newChar
+                        else:
+                            l1 += "|" + r2 + newChar
+            l2 += "|" + "ɛ"
+            Gram.remove(Gram[i])  # 删除原来的产生式
+            Gram.append(l1)
+            Gram.append(l2)
             break
 
         for j in range(i + 1, len(Gram)):  # 跳过同一条产生式和已经比较过的产生式
