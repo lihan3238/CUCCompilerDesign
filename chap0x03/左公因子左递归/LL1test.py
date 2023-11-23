@@ -239,8 +239,18 @@ def hasLeft() -> int:
                     if k == len(Gram[i]) or k == len(Gram[j]):  # 有一个产生式是另一个产生式的前缀
                         return 1
 
-                if Gram[i][k] == "|" or Gram[j][k] == "|":  # 相同部分后一位是|
-                    return 0
+                flag = 0
+                for s in range(len(Gram[i])):
+                    if Gram[i][s] == "|":
+                        flag = 1
+                        break
+                for s in range(len(Gram[j])):
+                    if Gram[j][s] == "|":
+                        flag = 1
+                        break
+                if flag == 1:
+                    flag = 0
+                    continue  # 有“|”的情况不处理
                 return 1
     return 0
 
@@ -260,6 +270,7 @@ def changeLeft() -> None:
             k = 0
             while k < (len(Gram)):
                 if i == k:
+                    k += 1
                     continue  # 跳过自己
                 if Gram[k][0] == Gram[i][0]:
                     r1 = Gram[k][3:]
@@ -270,16 +281,16 @@ def changeLeft() -> None:
             # 消除左递归
             for l in range(len(Gram[i])):
                 if Gram[i][l] == "|":
-                    r2 = Gram[i][1:l]
+                    r2 = Gram[i][4:l]
                     if r2 == "":
                         r2 = "ɛ"
                     while newChar in non_term:
                         newChar = chr(ord(newChar) + 1)  # 防止新的非终结符已经存在
                     l2 = newChar + "->" + r2 + newChar
                     break
-            for s in range(len(Gram[i])):
-                if Gram[i][s] == "|":
-                    if Gram[i][s + 1] == Gram[i][0]:  # 直接左递归的产生式
+            for s in range(l + 1, len(Gram[i])):
+                if Gram[i][s] == "|" or s + 1 == len(Gram[i]):
+                    if Gram[i][l + 1] == Gram[i][0]:  # 直接左递归的产生式
                         r2 = Gram[i][l + 2 : s]
                         if r2 == "":
                             r2 = "ɛ"
@@ -287,23 +298,24 @@ def changeLeft() -> None:
                             newChar = chr(ord(newChar) + 1)  # 防止新的非终结符已经存在
                         l2 = "|" + r2 + newChar
                     else:
-                        r2 = Gram[i][l + 1 : s]
+                        r2 = Gram[i][l + 1 : s + 1]
                         if r2 == "":
                             r2 = "ɛ"
                         if l1 == "":
                             l1 = Gram[i][0] + "->" + r2 + newChar
                         else:
                             l1 += "|" + r2 + newChar
+                    l = s
             l2 += "|" + "ɛ"
             Gram.remove(Gram[i])  # 删除原来的产生式
             Gram.append(l1)
             Gram.append(l2)
+            non_term.add(newChar)
             break
 
         for j in range(i + 1, len(Gram)):  # 跳过同一条产生式和已经比较过的产生式
             if Gram[i][3] == Gram[j][3]:  # 左公因子
                 k = 3
-                print(k, len(Gram[i]), len(Gram[j]))
                 while Gram[i][k] == Gram[j][k]:
                     k += 1
                     if k == len(Gram[i]):
@@ -312,9 +324,18 @@ def changeLeft() -> None:
                     if k == len(Gram[j]):
                         Gram[j] = Gram[j] + "ɛ"  # 有一个产生式是另一个产生式的前缀
                         break
-
-                if Gram[i][k] == "|" or Gram[j][k] == "|":  # 相同部分后一位不是|
-                    continue
+                flag = 0
+                for s in range(len(Gram[i])):
+                    if Gram[i][s] == "|":
+                        flag = 1
+                        break
+                for s in range(len(Gram[j])):
+                    if Gram[j][s] == "|":
+                        flag = 1
+                        break
+                if flag == 1:
+                    flag = 0
+                    continue  # 有“|”的情况不处理
                 comm = Gram[i][:k]
                 r1 = Gram[i][k:]
                 r2 = Gram[j][k:]
