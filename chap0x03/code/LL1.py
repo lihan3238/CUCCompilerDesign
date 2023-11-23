@@ -251,7 +251,7 @@ def printf() -> None:
     return None
 
 
-# 主要控制函数
+# 判断LL1
 def LL1() -> None:
     global non_term, term, First, Follow, start_sym, Gram, isLL1
 
@@ -299,6 +299,7 @@ def reAnalysis() -> bool:
     global non_term, term, First, Follow, start_sym, Gram, isLL1, AnalysisList, production
     AnalysisList = {}
     production = {}
+    # 初始化变量
     start_sym = Gram[0][0]  # 获取文法开始符号
     # 预处理出终结符和非终结符以及产生式
     for it in Gram:
@@ -320,7 +321,7 @@ def reAnalysis() -> bool:
 
 # 判断是否有左公因子或左递归
 def hasLeft() -> int:
-    for i in range(len(Gram)):
+    for i in range(len(Gram)):  # 遍历所有产生式
         if Gram[i][0] == Gram[i][3]:  # 左递归
             return 1
         for j in range(i + 1, len(Gram)):  # 跳过同一条产生式和已经比较过的产生式
@@ -359,7 +360,7 @@ def changeLeft() -> None:
     l2 = ""
     for i in range(len(Gram)):
         if Gram[i][0] == Gram[i][3]:  # 左递归
-            # 消除左递归
+            # 合并产生式
             k = 0
             while k < (len(Gram)):
                 if i == k:
