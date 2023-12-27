@@ -1,0 +1,11 @@
+0 E'-E		print(E)
+1 E-E-T		E.val = E.val - T.val	
+2 E-T		E.val = T.val	
+3 E-E+T		E.val = E.val + T.val
+4 F-G		F.val = G.val
+5 F-F^G		F.val = pow(F.val , G.val)
+6 G-a		G.val = a.val 
+7 G-(E)		G.val = E.val
+8 T-F		T.val = F.val
+9 T-T*F		T.val = T.val *F.val
+10 T-T/F		T.val = T.val / F.val

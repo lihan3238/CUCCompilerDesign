@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\Lexer">
+      <UniqueIdentifier>{4c34bd6a-8cb5-461d-a5b8-0af449900d20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\LR1">
+      <UniqueIdentifier>{c509d051-b0b8-47ad-8065-e36a6622c71e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Lexer">
+      <UniqueIdentifier>{376e6204-5543-46a2-b228-6d47370c39a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\LR1">
+      <UniqueIdentifier>{89d36571-e8e2-4eb2-ab25-508a8c614793}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Lexer\Lex.cpp">
+      <Filter>源文件\Lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LR1\DFA.cpp">
+      <Filter>源文件\LR1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LR1\Edge.cpp">
+      <Filter>源文件\LR1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LR1\Grammar.cpp">
+      <Filter>源文件\LR1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LR1\Node.cpp">
+      <Filter>源文件\LR1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LR1\pstring.cpp">
+      <Filter>源文件\LR1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LR1\Table.cpp">
+      <Filter>源文件\LR1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Lexer\Lex.h">
+      <Filter>头文件\Lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LR1\DFA.h">
+      <Filter>头文件\LR1</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LR1\Edge.h">
+      <Filter>头文件\LR1</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LR1\Grammar.h">
+      <Filter>头文件\LR1</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LR1\Node.h">
+      <Filter>头文件\LR1</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LR1\pstring.h">
+      <Filter>头文件\LR1</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LR1\Table.h">
+      <Filter>头文件\LR1</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
