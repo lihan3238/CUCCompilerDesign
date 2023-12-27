@@ -1,27 +1,11 @@
-﻿  Lex.cpp
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\Lexer\Lex.cpp(18,7): warning C4101: “value”: 未引用的局部变量
-  DFA.cpp
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\DFA.cpp(46,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\DFA.cpp(80,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\DFA.cpp(111,27): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\DFA.cpp(145,27): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
-  Edge.cpp
-  Grammar.cpp
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Grammar.cpp(239,35): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
-  Node.cpp
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Node.cpp(26,41): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Node.cpp(56,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  pstring.cpp
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\pstring.cpp(82,9): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  Table.cpp
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(216,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(230,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(266,15): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(331,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(334,57): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(355,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(369,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(435,15): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  main.cpp
-  正在生成代码...
-  SimpleCalculator.vcxproj -> D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\x64\Debug\SimpleCalculator.exe
+﻿  Table.cpp
+D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(222,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(236,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(272,15): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(337,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(340,57): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(361,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(375,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(441,15): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(491,39): error C2296: “%”: 无效，因为左操作数的类型为“double”
+D:\大三学习\编译原理\实验\CUCCompilerDesign\chap0x05\code\src\LR1\Table.cpp(491,39): error C2297: “%”: 无效，因为右操作数的类型为“double”

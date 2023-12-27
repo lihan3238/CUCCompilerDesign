@@ -5,51 +5,57 @@
 using std::cin;
 using std::cout;
 using std::stack;
-
+// 默认构造函数，初始化一个空的分析表。
 Table::Table()
 {
 	table.clear();
 }
-
+// 使用给定的DFA初始化分析表的构造函数。
 Table::Table(const DFA &dfa)
 {
 	graph = dfa;
 	init_table();
 }
-
+// 基于非终结符和终结符初始化分析表。
 void Table::init_table()
 {
 	int i;
 
-	auto &Vt = graph.get_G().get_Vt();
-	auto &Vn = graph.get_G().get_Vn();
+	auto& Vt = graph.get_G().get_Vt(); // 获取终结符集合
+	auto& Vn = graph.get_G().get_Vn(); // 获取非终结符集合
 
+	// 遍历所有状态节点，为每个节点创建一个映射表。
 	for (i = 0; i < graph.get_node_set().size(); i++)
 	{
 		map<string, string> new_map;
 
+		// 为每个终结符在映射表中创建空条目。
 		for (auto it = Vt.begin(); it != Vt.end(); it++)
 		{
 			new_map[*it] = "";
 		}
 
+		// 添加一个特殊的结束符号'#'。
 		new_map["#"] = "";
 
+		// 为每个非终结符在映射表中创建空条目。
 		for (auto it = Vn.begin(); it != Vn.end(); it++)
 		{
 			new_map[*it] = "";
 		}
 
+		// 将创建的映射表添加到分析表中。
 		table.push_back(new_map);
 	}
 }
 
+// 计算分析表的内容。
 void Table::cal_table()
 {
-	Move();
-	Reduce();
+	Move();   // 处理移进项
+	Reduce(); // 处理规约项
 }
-
+// 打印分析表。
 void Table::print_table()
 {
 	vector<string> keys;
@@ -92,7 +98,7 @@ void Table::print_table()
 		cout << i << ". " << graph.get_G().get_productions()[i] << '\n';
 	}
 }
-
+//处理移进
 void Table::Move()
 {
 	auto &edge_set = graph.get_edge_set();
@@ -123,7 +129,7 @@ void Table::Move()
 		}
 	}
 }
-
+//处理规约
 void Table::Reduce()
 {
 	auto &node_set = graph.get_node_set();
@@ -168,7 +174,7 @@ void Table::Reduce()
 		}
 	}
 }
-
+// 使用分析表对输入的字符串进行语法分析。
 bool Table::predict(string &s)
 {
 	if (s == "")
@@ -280,7 +286,7 @@ bool Table::predict(string &s)
 
 	return false;
 }
-
+// 使用分析表对输入的符号向量进行语法分析。
 bool Table::predict(vector<symbol> &parse_result)
 {
 	int i;
@@ -497,7 +503,7 @@ bool Table::predict(vector<symbol> &parse_result)
 
 	return false;
 }
-
+// 析构函数，清理分析表。
 Table::~Table()
 {
 	table.clear();
